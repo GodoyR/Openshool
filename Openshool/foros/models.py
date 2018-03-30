@@ -9,6 +9,9 @@ class Pregunta(models.Model):
     Fecha_Publicacion = models.DateTimeField('date published')
     Estado = models.BooleanField()
 
+    def __str__(self):
+        return self.Texto_Pregunta
+
 
 class Articulo(models.Model):
     Pdf_articulo = models.FileField(max_length=200)
