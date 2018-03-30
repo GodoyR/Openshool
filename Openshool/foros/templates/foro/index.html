@@ -1,0 +1,10 @@
+{% if Preguntas %}
+  <ul>
+    {% for Pregunta in Preguntas %}
+    <li><a href="/foro/{{Preguntas.id}}/">{{Pregunta.Texto_Pregunta}}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <h2>'no hay Preguntas'</h2>
+
+  {% endif %}
