@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OpenSchool</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<style>
+	  
+	</style>
+
+</head>
+<body>
+	<header>
+		<div class="container">
+	        <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+              <a class="navbar-brand" href="http://localhost:8000/foro">OpenSchool</a>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Noticias</a>
+                </li>	
+                <li class="nav-item" >
+                  <a class="nav-link" href="#">Cuenta</a>
+                </li>
+              </ul>
+            </nav>
+
+        </div>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<ul class="herramientas" style="border: 2px solid #1a75ff;">
+			     <div class="cuadros">
+                  <li><a href="#home">Nuevo Foro</a></li>
+                  <li><a href="#news">H1</a></li>
+                  <li><a href="#contact">H2</a></li>
+                  <li><a href="#about">H3</a></li>
+                 </div>
+                </ul>
+
+            </div>
+            <div class="col-md-5">
+            	{% if Preguntas %}
+                {% for Pregunta in Preguntas %}
+                <div class="pregunta" style="border: 2px solid #1a75ff; border-radius: 3px; margin-top: 10px;">
+                <a href="/foro/{{Pregunta.id}}/">{{Pregunta.Texto_Pregunta}}</a></li>
+                {% endfor %}
+                {% else %}
+                <h2>'no hay Preguntas'</h2>
+
+                {% endif %}
+                </div>
+            </div>	
+            <div class="col-md-4" style="border-left:2px solid #1a75ff; ">
+            	
+            </div>
+	    </div>
+	</div>	
+</body>
+</html>
+
+
